@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
-import 'homepage.dart';
+import 'package:provider/provider.dart';
+import 'package:shopping_app/itemstate_model.dart';
+import 'homePage.dart';
 
 void main() {
-  runApp(const MyApp());
+  // runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider( 
+      create: (context) =>  StateModel(),
+      child: const MyApp(),
+    )
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -26,7 +34,7 @@ class RandomWords extends StatefulWidget {
 class _RandomWordsState extends State<RandomWords> {
   final _suggestion = <WordPair>[];
   final _biggerFont = const TextStyle(fontSize: 18.0);
-  final _saved = Set<WordPair>();
+  final _saved = <WordPair>{};
   @override
   Widget build(BuildContext context) {
     final wordPair = WordPair.random();

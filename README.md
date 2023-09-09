@@ -14,3 +14,9 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+# How to run app
+
+- run flutter pub get to get dependencies
+- open emulator
+- use Flutter run to execute this app or press f5 to run in debug mode
